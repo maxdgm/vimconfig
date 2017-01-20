@@ -1,0 +1,132 @@
+" 
+" ⌠      ⌠
+" │ BÉPO │ 
+" ⌡      ⌡
+" 
+
+" {{{---{W} → [É]
+" ––––––––––————
+" On remappe W sur É :
+noremap é w
+noremap É W
+
+onoremap aé aw
+onoremap aÉ aW
+onoremap ié iw
+onoremap iÉ iW
+" }}}
+
+" {{{ [HJKL] → {CTSR}
+" ––––––––––––––––————
+" {cr} = « gauche / droite »
+noremap c h
+noremap r l
+" {ts} = « haut / bas »
+noremap t j
+noremap s k
+" {CR} = « haut / bas de l'écran »
+noremap C H
+noremap R L
+" {TS} = « joindre / aide »
+noremap T J
+noremap gT gJ
+noremap gt <Nop>
+noremap S K
+" }}}
+
+" {{{ {HJKL} → [CTSR]
+" ––––––––––––––––————
+" {J} = « Jusqu'à »             (j = suivant, J = suivant)
+noremap j t
+noremap J T
+" {L} = « Changer »             (l = attend un mvt, L = jusqu'à la fin de la ligne )
+noremap l c
+noremap L C
+" {H} = « Remplacer »           (h = un caractère, H = reste en « Remplacer »)
+noremap h r
+noremap H R
+" {K} = « Substituer »          (k = un caractère, K = une ligne)
+noremap k s
+noremap K S
+" }}}
+
+" {{{ → [ Onglets ]
+" –––––––––––––––––––––——
+noremap gb gT
+noremap gé gt
+" }}}
+
+" {{{ → [ Fenêtres ]
+" ————————————————————————
+" haut/bas/gauche/droite…
+noremap wt <C-w>j
+noremap ws <C-w>k
+noremap wc <C-w>h
+noremap wr <C-w>l
+
+noremap wC <C-w>H
+noremap wT <C-w>J
+noremap wS <C-w>K
+noremap wR <C-w>L
+
+noremap w& <C-w>T
+
+noremap wb <C-w>t
+noremap wa <C-w>b
+
+" Ferme la fenêtre (ne pas confondre avec « wq » qui QUITTE La fenêtre)
+noremap wd <C-w>c
+" Rotation des fenêtres
+noremap wl <C-w>r
+noremap wL <C-w>R
+
+noremap w<SPACE> <C-w>s
+noremap w<CR> <C-w>v
+noremap wv <Nop>
+
+" Pour faciliter les manipulations de fenêtre, on utilise {W} comme un Ctrl+W :
+noremap w <C-w>
+noremap W <C-w><C-w>
+" }}}
+
+" {{{ → [ <> en direct ]
+" ––––––––––––————
+noremap « <
+noremap » >
+" }}}
+
+" {{{ → [ Plugins ]
+" –––––––————
+let g:surround_no_mappings=1
+
+nmap ds  <Plug>Dsurround
+nmap ls  <Plug>Csurround
+nmap lS  <Plug>CSurround
+nmap ys  <Plug>Ysurround
+nmap yS  <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+imap <C-S> <Plug>Isurround
+imap <C-G>s <Plug>Isurround
+imap <C-G>S <Plug>ISurround
+
+xmap gc  <Plug>Commentary
+nmap gc  <Plug>Commentary
+omap gc  <Plug>Commentary
+nmap gcc <Plug>CommentaryLine
+nmap lgc <Plug>ChangeCommentary
+nmap gcu <Plug>Commentary<Plug>Commentary
+
+let g:tagbar_map_togglesort="l"
+let g:tagbar_map_toggleautoclose="h"
+" }}}
+
+" {{{ → [ Autres ]
+noremap gt gj
+noremap gs gk
+" }}}
+
+" vim: set fdm=marker fmr={{{,}}} fdl=0 tw=78:
