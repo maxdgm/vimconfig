@@ -105,7 +105,8 @@ set wrap
 " highlight NbSp ctermbg=lightgray guibg=lightred
 " match NbSp /\%xa0/
 " show the ASCII of the character under cursor
-" set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+"set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+set statusline=%{fugitive#statusline()}
 
 " }}}
 
